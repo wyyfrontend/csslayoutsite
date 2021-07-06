@@ -29,3 +29,32 @@ To test a translation, change the @lang@ property in "_config.yml":https://githu
 h2. License
 
 "Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)":https://creativecommons.org/licenses/by-nc/4.0/
+
+
+
+
+
+
+
+https://npm.taobao.org/mirrors/node/latest-v10.x/
+https://npm.taobao.org/mirrors/node/latest-v10.x/node-v10.0.0-linux-x64.tar.gz
+https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-x64.tar.gz
+
+
+curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+curl -sSL https://get.rvm.io | bash -s stable
+source ~/.bashrc
+source ~/.bash_profile
+source /etc/profile.d/rvm.sh
+
+echo "ruby_url=https://cache.ruby-china.org/pub/ruby" > ~/.rvm/user/db
+gem sources --remove https://rubygems.org/
+gem sources -a https://gems.ruby-china.org/
+
+rvm list known
+rvm install 2.1
+
+yum update openssl
+gem install jekyll
+jekyll serve
